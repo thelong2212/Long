@@ -1,0 +1,168 @@
+﻿@using PhucAnh_done.Models;
+@{
+    ViewBag.Title = "gioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var phanLoaiTheoHang = ViewData["phanLoaiTheoHang"] as List<PhanLoaiTheoHangSp> ?? new List<PhanLoaiTheoHangSp>();
+    var loaiDanhMucSanPham = ViewData["loaiDanhMucSanPham"] as List<LoaiDanhMucSanPham> ?? new List<LoaiDanhMucSanPham>();
+    var loaiDMSP = ViewData["loaiDMSP"] as List<DanhMucSanPham> ?? new List<DanhMucSanPham>();
+    var DanhMuc = ViewData["DanhMuc"] as List<PhanLoaiSanPham> ?? new List<PhanLoaiSanPham>();
+}
+@model GioHang
+
+<section>
+    <div class="container cont">
+        <div id="menu">
+            <div class="container">
+                <div class="row nav">
+                    <div class="col-md-3" id="menu1">
+                        <div class="titlee">
+                            <a href="">
+                                <i class="fas fa-bars"></i>
+                                <span>DANH MỤC SẢN PHẨM</span>
+                            </a>
+                            <ul class="menu-product">
+                                @foreach (var PhanLoaiDM in loaiDanhMucSanPham)
+                                {
+                                    <li class="hover">
+                                        <a href="/productCategory/@PhanLoaiDM.DanhMucSanPhamPID">@PhanLoaiDM.TenLoaiDanhMucSanPham</a>
+                                        <div class="menu-detail">
+                                            @foreach (var itemC in loaiDMSP.Where(x => x.DanhMucSanPhamPID == PhanLoaiDM.DanhMucSanPhamPID))
+                                            {
+                                                <div class="box-cat">
+                                                    <a class="ti-menu" href="/productCategoryClass/@itemC.DanhMucSanPhamPID"><b>@itemC.TenDanhMucSanPham</b></a>
+                                                    <div class="new-sub">
+                                                        @foreach (var item in DanhMuc.Where(x => x.DanhMucSanPhamID == itemC.DanhMucSanPhamID))
+                                                        {
+                                                            <div class="lap1">
+                                                                <a href="/productCategoryClass/@item.DanhMucSanPhamID">@item.TenPhanLoaiSanPham<i class="fa fa-angle-right"></i></a>
+                                                                @foreach (var spdm in phanLoaiTheoHang)
+                                                                {
+                                                                    var child = phanLoaiTheoHang.Where(x => x.PhanLoaiSanPhamID == item.PhanLoaiSanPhamID);
+                                                                    if (child.Count() > 0)
+                                                                    {
+                                                                        <div class="list-sub-hover">
+
+                                                                            @foreach (var childItem in child)
+                                                                            {
+                                                                                <a href="/productCategoryName/@childItem.PhanLoaiSanPhamID" class="cat3">@childItem.TenSanPhamTheoHang</a>
+                                                                            }
+                                                                        </div>
+                                                                    }
+                                                                }
+                                                            </div>
+                                                        }
+                                                    </div>
+
+                                                </div>
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-md-7" id="menu2">
+                        <span>
+                            <i class="far fa-check-circle"></i>
+                            <img src="" alt="">
+                            100% Chính Hãng
+                        </span>
+                        <span>
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <img src="" alt="">
+                            Giá ưu đãi nhất
+                        </span>
+                        <span>
+                            <i class="	fas fa-truck"></i>
+                            Miễn Phí vận chuyển
+                        </span>
+                        <span>
+                            <i class="	fab fa-google-drive"></i>
+                            Bảo hành sử dụng
+                        </span>
+                    </div>
+                    <div class="col-md-2" id="menu3">
+                        <a href="">DEAL GIỜ VÀNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container" style="min-height: 520px;">
+        <div>
+            <h5>Giỏ hàng của bạn (@Model.TongSoLuong sản phẩm)</h5>
+        </div>
+        <div class="row">
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-body">
+                        @if (Model.Gio.Count <= 0)
+                        {
+                            <div class="text-center">
+                                <p style="margin:0">Không có sản phẩm</p>
+                            </div>
+                        }
+                        else
+                        {
+                            foreach (var item in Model.Gio)
+                            {
+                                <div class="row" style="margin-bottom: 20px">
+                                    <div class="col-2">
+                                        @{
+                                            var AnhSanPham = item.SanPham.AnhSanPham;
+                                            <img src="@Url.Content(AnhSanPham)" style="width: 100%;" class="img-responsive" alt="">
+                                        }
+                                    </div>
+                                    <div class="col-5">
+                                        <a style="font-size: 18px" href="/productDetail/@item.SanPham.SanPhamID"><span>Tên sản phẩm: @item.SanPham.TenSanPham</span></a>
+                                        <p>Giá sản phẩm : @item.SanPham.GiaBan.Value VNĐ</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                @{
+                                                    <div class="input-group input-group-sm mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-sm">Số lượng</span>
+                                                        </div>
+                                                        <input onchange="capNhatSoLuong(@item.SanPham.SanPhamID)" type="number" step="1" class="form-control" data-step-max="10" aria-label="Small" aria-describedby="inputGroup-sizing-sm" min="0" max="120" id="@item.SanPham.SanPhamID" value="@item.SoLuong">
+                                                    </div>
+                                                }
+                                            </div>
+                                            <div class="col-3">
+                                                <a class="btn btn-light" href="/removeAll/@item.SanPham.SanPhamID">Xóa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 style="margin:0">Thành tiền: @Model.TongTien VNĐ</h5>
+                    </div>
+                </div>
+                @if (Model.Gio.Count > 0)
+                {
+                    <a class="btn btn-dark" href="/thanhtoan" style="width: 100%">Đặt hàng</a>
+                }
+            </div>
+        </div>
+        <script>
+            function capNhatSoLuong(SanPhamID) {
+                var soLuong = document.getElementById(SanPhamID).value;
+                window.location.href = '/remove/' + SanPhamID + '?soLuong=' + soLuong;
+            }
+        </script>
+    </div>
+</section>
+

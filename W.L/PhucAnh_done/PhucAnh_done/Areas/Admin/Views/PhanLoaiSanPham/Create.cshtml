@@ -1,0 +1,54 @@
+﻿@model PhucAnh_done.Models.PhanLoaiSanPham
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="content container col-md-6">
+    @using (Html.BeginForm("Create", "PhanLoaiSanPham", FormMethod.Post))
+    {
+        <div class="form-horizontal">
+            <h4 style="text-align:center;color:blue">Thêm phân loại sản phẩm</h4>
+            <hr />
+            <div class="form-group">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                @if (ViewBag.Success != null)
+                {
+                    <div class="alert alert-success">@ViewBag.Success</div>}
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TenPhanLoaiSanPham, new { @class = " col-md-4" })
+                <div class="col-md-6">
+                    @Html.TextBoxFor(model => model.TenPhanLoaiSanPham, new { required = true, @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TenPhanLoaiSanPham, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.GhiChu, htmlAttributes: new { @class = " col-md-4" })
+                <div class="col-md-6">
+                    @Html.TextAreaFor(model => model.DanhMucSanPhamID, new { required = true, @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DanhMucSanPhamID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DanhMucSanPhamID, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-6">
+                    @Html.TextBoxFor(model => model.DanhMucSanPhamID, new { required = true, @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DanhMucSanPhamID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-12">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div>
+    @Html.ActionLink("Quay lại trang trước", "Index")
+</div>

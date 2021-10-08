@@ -1,0 +1,2380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
+
+
+    <link rel="stylesheet" href="css/detail-product.css">
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="slick-1.8.1/slick/slick.min.js"></script>
+    <script src="js/detail-product.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="row top">
+            <div class="col-sm-2">
+                <ul>
+                    <li>
+                        <a href=""> Hệ Thống Showroom</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-7">
+                <ul>
+                    <li>
+                        <a href=""><i class="fas fa-gifts"></i>
+                            Khuyến mãi
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><i class="far fa-newspaper"></i>
+                            Tin tức
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-phone-alt"></i>
+                            Xây dựng cấu hình
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-file-invoice-dollar"></i>
+                            In hoá đơn điện tử
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">Tra cứu bảo hành</a>
+                    </li>
+                    <li>
+                        <a href="">Mua trả góp</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul>
+                    <li>
+                        <a href=""><i class="far fa-user-circle"></i>
+                            Đăng ký
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">Đăng nhập</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <div class="container header">
+            <div class="row" id="IDheader">
+                <div id="banner">
+                    <a href="" id="logo">
+                        <img src="image/banner/tải xuống.png" alt="">
+                    </a>
+                </div>
+                <div id="search">
+                    <div class="search">
+                        <form action="">
+                            <input type="search" id="searchID" placeholder="Nhập từ khoá tìm kiếm..." />
+                            <select style="outline: none;" id="search-type">
+                                <option value="product">Sản phẩm</option>
+                                <option value="article">Bài viết</option>
+                            </select>
+                            <span id="icon"><i class="fa fa-search"></i></span>
+                        </form>
+                    </div>
+                </div>
+                <div id="phone">
+                    Gọi mua hàng:
+                    <b>1900 2146</b>
+                </div>
+                <div id="cart">
+                    <a id="cart-header" href="">
+                        <i class="fas fa-shopping-cart"></i><span>Giỏ hàng</span><b>0</b>
+                    </a>
+                </div>
+            </div>
+            <div id="menu">
+                <div class="container">
+                    <div class="row nav">
+                        <div class="col-md-3" id="menu1">
+                            <a href=""><i class="fas fa-bars"></i>
+                                <span>Danh mục sản phẩm</span></a>
+                                <ul class="main-menu">
+                                    <li class="hover">
+                                        <a href=""><i class="fas fa-laptop"></i>Laptop & Linh phụ kiện</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo hãng</b></a>
+                                                <div class="new-sub">
+                                                    <div class="lap1">
+                                                        <a href="">Laptop Acer <i class="fa fa-angle-right"></i></a>
+                                                        <div class="list-sub-hover">
+                                                            <a href="" class="cat3">PREDATOR</a>
+                                                            <a href="" class="cat3">Aspire</a>
+                                                            <a href="" class="cat3">Nitro</a>
+                                                            <a href="" class="cat3">Swifts</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lap1">
+                                                        <a href="">Laptop Apple <i class="fa fa-angle-right"></i></a>
+                                                        <div class="list-sub-hover">
+                                                            <a href="" class="cat3">Macbook Ari</a>
+                                                            <a href="" class="cat3">Macbook Pro</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lap1">
+                                                        <a href="">Laptop Asus <i class="fa fa-angle-right"></i></a>
+                                                        <div class="list-sub-hover">
+                                                            <a href="" class="cat3">Vivobook</a>
+                                                            <a href="" class="cat3">Vivobook Flip</a>
+                                                            <a href="" class="cat3">Zenbook</a>
+                                                            <a href="" class="cat3">Zenbook Flip</a>
+                                                            <a href="" class="cat3">Expretbook</a>
+                                                            <a href="" class="cat3">TUF Gaming</a>
+                                                            <a href="" class="cat3">Gaming</a>
+                                                            <a href="" class="cat3">Phổ thông</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lap1">
+                                                        <a href="">Laptop Dell <i class="fa fa-angle-right"></i></a>
+                                                        <div class="list-sub-hover">
+                                                            <a href="" class="cat3">G series</a>
+                                                            <a href="" class="cat3">Inspiron</a>
+                                                            <a href="" class="cat3">Vostro</a>
+                                                            <a href="" class="cat3">XPS</a>
+                                                            <a href="" class="cat3">Lantiude</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lap1">
+                                                        <a href="">Laptop Fujitsu <i class="fa fa-angle-right"></i></a>
+                                                        <div class="list-sub-hover">
+                                                            <a href="" class="cat3">LifeBook E549</a>
+                                                            <a href="" class="cat3">LifeBook E547</a>
+                                                            <a href="" class="cat3">LifeBook E749</a>
+                                                            <a href="" class="cat3">LifeBook U747</a>
+                                                            <a href="" class="cat3">LifeBook U937</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lap1">
+                                                        <a href="">Laptop HP <i class="fa fa-angle-right"></i></a>
+                                                        <div class="list-sub-hover">
+                                                            <a href="" class="cat3">PREDATOR</a>
+                                                            <a href="" class="cat3">Aspire</a>
+                                                            <a href="" class="cat3">Nitro</a>
+                                                            <a href="" class="cat3">Swifts</a>
+                                                            <a href="" class="cat3">Swifts</a>
+                                                            <a href="" class="cat3">Swifts</a>
+                                                            <a href="" class="cat3">Swifts</a>
+                                                            <a href="" class="cat3">Swifts</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-mobile-alt"></i>Điện thoại, Tavlet & Phụ kiện</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""> <i class="fas fa-desktop"></i>Máy tính đồng bộ</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-server"></i>Server & Workstation</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""> <i class="fas fa-laptop"></i>PC chơi Game, Gaming Gear</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-microchip"></i>Linh kiện máy tính</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""> <i class="far fa-eye"></i>Phụ kiện máy tính & nghe nhìn</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-laptop"></i>Màn hình máy tính</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-print"></i>Thiết bị văn phòng</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fab fa-uncharted"></i>Phần mềm bản quyền</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-upload"></i>TB lưu trữ & Kỹ thuật số</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-network-wired"></i>Thiểt bị mạng</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""> <i class="fas fa-video"></i>Camera giám sát</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-laptop"></i>TB siêu thị & Máy chấm công</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fab fa-youtube"></i>Thiết bị Hội nghị và Trường học</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="hover">
+    
+                                        <a href=""><i class="fas fa-home"></i>SmartHome</a>
+                                        <div class="menu-detail">
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="/sanPham.html">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                    <a href="">Laptop học tập-văn phòng</a>
+                                                    <a href="">Laptop đồ hoạ- kỹ thuật</a>
+                                                    <a href="">Laptop Gaming-Hiend</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo khoảng tiền</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop dưới 10 triệu</a>
+                                                    <a href="">Laptop từ 10-15 triệu</a>
+                                                    <a href="">Laptop từ 15-20 triệu</a>
+                                                    <a href="">Laptop từ 20-25 triệu</a>
+                                                    <a href="">Laptop từ 25-30 triệu</a>
+                                                    <a href="">Laptop từ 30-35 triệu</a>
+                                                    <a href="">Laptop từ 35-40 triệu</a>
+                                                    <a href="">Laptop trên 40 triệu</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo cấu hình</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop Celeron</a>
+                                                    <a href="">Laptop Pentium</a>
+                                                    <a href="">Laptop core i3</a>
+                                                    <a href="">Laptop core i5</a>
+                                                    <a href="">Laptop core i7</a>
+                                                    <a href="">Laptop core i9</a>
+                                                    <a href="">Laptop Ryzen 3</a>
+                                                    <a href="">Laptop Ryzen 5</a>
+                                                    <a href="">Laptop Ryzen 7</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href=""><b>Laptop theo nhu cầu</b></a>
+                                                <div class="new-sub">
+                                                    <a href="">Laptop mỏng nhẹ</a>
+                                                    <a href="">Laptop cao cấp</a>
+                                                    <a href="">Laptop doanh nghiệp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+    
+                                </ul>
+
+                        </div>
+                        <div class="col-md-7" id="menu2">
+                            <span>
+                                <i class="far fa-check-circle"></i>
+                                <img src="" alt="">
+                                100% Chính Hãng
+                            </span>
+                            <span>
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <img src="" alt="">
+                                Giá ưu đãi nhất
+                            </span>
+                            <span>
+                                <i class="	fas fa-truck"></i>
+                                Miễn Phí vận chuyển
+                            </span>
+                            <span>
+                                <i class="	fab fa-google-drive"></i>
+                                Bảo hành sử dụng
+                            </span>
+                        </div>
+                        <div class="col-md-2" id="menu3">
+                            <a href="">DEAL GIỜ VÀNG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+
+        <div class="container ">
+            <div id="breadcrumb">
+                <div>
+                  <a href="/">
+                    <span>Trang chủ</span>
+                  </a>
+                </div>
+                <div>
+                     &nbsp;/&nbsp;<a href=""> <span>Laptop &amp; Linh phụ kiện</span> </a>
+                </div>
+                <div>
+                     &nbsp;/&nbsp;<a href=""><span><a class="red">Laptop mỏng nhẹ</a></span> </a>
+                </div>
+              </div>
+            <div class="tile-product">
+                <h2>Laptop Lenovo Ideapad 5 15ALC05 82LN00APVN (Ryzen 7 5700U/ 8Gb/ 512Gb SSD/ 15.6inch FHD/ VGA ON/
+                    Win10/ PLATINUM_GREY)</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="slider">
+                        <div class="slider-for">
+                            <div><img src="image/detail-pro/43750_ideapad_5_15_ha1.jpg" alt=""></div>
+                            <div><img src="image/detail-pro/43750_ideapad_5_15_ha2.jpg" alt=""></div>
+                            <div><img src="image/detail-pro/43750_ideapad_5_15_ha3.jpg" alt=""></div>
+                            <div><img src="image/detail-pro/43750_ideapad_5_15_ha4.jpg" alt=""></div>
+                        </div>
+                        <div class="slider-nav">
+                            <div><span><img src="image/detail-pro/75_43750_ideapad_5_15_ha1.jpg" alt=""></span>
+                            </div>
+                            <div><span><img src="image/detail-pro/75_43750_ideapad_5_15_ha2.jpg" alt=""></span>
+                            </div>
+                            <div><span><img src="image/detail-pro/75_43750_ideapad_5_15_ha3.jpg" alt=""></span>
+                            </div>
+                            <div><span><img src="image/detail-pro/75_43750_ideapad_5_15_ha4.jpg" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-left">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-check-square"></i>
+                                        <a href="">- Bộ VXL: Ryzen 7 5700U (8C / 16T, 1.8 / 4.3GHz, 4MB L2 / 8MB
+                                            L3)</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-check-square"></i>
+                                        <a href="">- Cạc đồ họa: Integrated AMD Radeon Graphics</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-check-square"></i>
+                                        <a href="">- Bộ nhớ: 8Gb</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-check-square"></i>
+                                        <a href="">- Ổ cứng/ Ổ đĩa quang: 512GB SSD M.2 2242 PCIe 3.0x4 NVMe</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-check-square"></i>
+                                        <a href="">- Màn hình: 15.6Inch Full HD</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-check-square"></i>
+                                        <a href="">- Hệ điều hành: Windows 10 Home</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-check-square"></i>
+                                        <a href="">- Màu sắc/ Chất liệu: PLATINUM_GREY</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <div>
+                        <span>
+                            <p>Đánh giá:
+                                 <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            </p>
+                           
+                        </span>
+                        <div class="table-mid">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Giá niêm yết</td>
+                                        <td id="price-listing"><b>19.490.000 ₫</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Giá bán:</b></td>
+                                        <td id="price"><b>17.990.000 ₫</b>[Giá đã có VAT]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Giá khuyến mãi</b></td>
+                                        <td>
+                                            <span id="sale1"><b>17.790.000 ₫</b></span>
+                                            <span id="sale2">Giảm thêm 200.00 ₫ khi quẹt VNPAY <a href="">(Xem chi
+                                                    tiết)</a></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="p">
+                                <a><span> Bảo hành: Chính hãng 24 tháng, bảo hành tại nơi sử dụng, đổi mới 30
+                                        ngày.</span></a>
+                                <span>
+                                    Giao hàng tận nơi miễn phí theo chính sách vận chuyển
+                                    <a href="">(Xem chi tiết)</a>
+                                </span>
+
+                            </p>
+                            <div class="button">
+                                <button class="btn1">
+                                    <span><b>MUA NGAY</b></span>
+                                    <span><a>Giao hàng tận nơi nhanh chóng</a></span>
+                                </button>
+                                <button class="btn2">
+                                    <span><b>MUA TRẢ GÓP</b></span>
+                                    <span><a>Thủ tục đơn giản</a></span>
+                                </button>
+                            </div>
+                            <div class="sale">
+                                <ul>
+                                    <li>
+                                        <i class="far fa-check-square"></i>
+                                        <a href=""> Quà ngập tràn - Giá sập sàn: Giảm tới 500.000đ khi mua
+                                            laptop</a>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-check-square"></i>
+                                        <a href=""> Mua aptop gaming giảm ngay 500.00đ </a>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-check-square"></i>
+                                        <a href=""> Mua laptop Dell Gaming G-Series sở hữa ngay: 01(một) bôh quà tặng Dell Gaming cực chất</a>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-check-square"></i>
+                                        <a href=""> Giảm tới 20% khi mua linh kiện, phụ kiện kèm laptop</a>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-check-square"></i>
+                                        <a href=""> Ưu đãi giảm tới 6000.000 VNĐ khi mua phần mền Windows- Office- Diệt vỉut</a>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-check-square"></i>
+                                        <a href=""> Khuyến mãi siêu HOT: PC siêu chất- Rinh Gấp Quà To</a>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-check-square"></i>
+                                        <a href=""> Giảm tới 20% khi mua thiết bị văn phòng</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="line"></div>
+                            <div class="product-info">
+                                <div class="title">
+                                    <b>Ưu đãi và quà tặng khuyến mãi:</b>
+                                </div>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Từ ngày 1/7 đến 31/07/2021, Tặng bộ quà trị giá 1.000.000Đ
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Tai nghe thời trang
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Chuột không dây
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Bàn di chuột
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Bộ vệ sinh
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Balo Lenovo
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Tặng gói bảo trì, bảo dưỡng laptop miễn phí tại Phúc Anh
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Giảm 20% cặp or balo thời trang Targus, Tucano, POSO… khi mua kèm
+                                                laptop
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Giảm 10% ram laptop, ổ cứng HDD laptop, phụ kiện Ugreen các loại khi
+                                                mua kèm laptop
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                - Giảm 5% ổ cứng di động khi mua kèm laptop
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <p><a href="">BẠN MUỐN ĐẾN CỦA HÀNG?</a></p>
+                    </div>
+                    <div class="right-up">
+                        <div id="IDadd">
+                            <a href=""><b>Đang còn hàng tại:</b></a>
+                            <a href=""><b>(Bấm để xem đường dẫn)</b></a>
+                        </div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="">- Số 15 Xã Đàn, Q. Đống Đa, HN</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="">- Số 134 Thái Hà, Q. Đống Đa, HN</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="">- Số 152 Trần Duy Hưng, Q. Cầu Giấy, HN</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="">- Số 160 Phạm Văn Đồng, Q. Cầu Giấy, HN</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="">- Số 63 Nguyễn Hoàng, Q. Nam Từ Liêm, HN</a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="right-bot">
+                        <div class="rb"> <b>Phúc Anh cam kết</b></div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-star"></i>
+                                        <a>100% sản phẩm chính hãng</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="far fa-star"></i>
+                                        <a>100% giá cạnh tranh so với thị trường</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                            </tbody>
+                        </table>
+                        <div class="rb"> <b>Mua hàng trả góp lãi suất 0%</b></div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <i class="far fa-star"></i>
+                                    <a>Giao hàng nhanh 2h và miễn phí giao hàng từ 500.000đ</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="far fa-star"></i>
+                                    <a>Ưu đãi vàng dành cho khách hàng doanh nghiệp</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="far fa-star"></i>
+                                    <a>Đổi mới sản phẩm đến 30 ngày </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="far fa-star"></i>
+                                    <a>Dịch vụ bảo hành chuyên nghiệp, uy tín </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ul">
+            <ul>
+                <li>
+                    <a href="">Thông số kỹ thuật</a>
+                </li>
+                <li>
+                    <a href="">Đặc điểm nổi bật</a>
+                </li>
+                <li>
+                    <a href="">Video</a>
+                </li>
+                <li>
+                    <a href="">Sản phẩm giá tương đương</a>
+                </li>
+                <li>
+                    <a href="">Bình luận người dùng</a>
+                </li>
+                <li>
+                    <a href="">Đánh giá sản phẩm</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="pro-h4">
+                <h4>SẢN PHẨM TƯƠNG ĐƯƠNG</h4>
+            </div>
+            <div class="row img-table">
+                <div class="col" id="img-table-1">
+                    <a href="">
+                        <img src="image/product/250_43495_tuf_gaming_fx516_ha2.jpg" alt="">
+                    </a>
+                    <a href="">Apple iPhone 12 Pro Max 128GB (VN/A) (Gold)</a>
+                    <span style="font-size: 12px;">
+                        <i id="list-price">Giá niêm miết: </i>"33.990.000 ₫ "
+                    </span>
+                    <span id="price">
+                        <i>Giá bán: </i>"33.990.000 ₫ "
+                    </span>
+                </div>
+                <div class="col" id="img-table-1">
+                    <a href="">
+                        <img src="image/product/250_40430_legion_5_15_ha5.jpg" alt="">
+                    </a>
+                    <a href="">Apple iPhone 12 Pro Max 128GB (VN/A) (Gold)</a>
+                    <span style="font-size: 12px;">
+                        <i id="list-price">Giá niêm miết: </i>"33.990.000 ₫ "
+                    </span>
+                    <span id="price">
+                        <i>Giá bán: </i>"33.990.000 ₫ "
+                    </span>
+                </div>
+                <div class="col" id="img-table-1">
+                    <a href="">
+                        <img src="image/product/250_40626_ipad_gen_8_10_2_inch_wifi_gold_ha1.jpg" alt="">
+                    </a>
+                    <a href="">Apple iPhone 12 Pro Max 128GB (VN/A) (Gold)</a>
+                    <span style="font-size: 12px;">
+                        <i id="list-price">Giá niêm miết: </i>"33.990.000 ₫ "
+                    </span>
+                    <span id="price">
+                        <i>Giá bán: </i>"33.990.000 ₫ "
+                    </span>
+                </div>
+                <div class="col" id="img-table-1">
+                    <a href="">
+                        <img src="image/product/250_40639_ipad_air_4_10_9_inch_wifi_blue_ha1.jpg" alt="">
+                    </a>
+                    <a href="">Apple iPhone 12 Pro Max 128GB (VN/A) (Gold)</a>
+                    <span style="font-size: 12px;">
+                        <i id="list-price">Giá niêm miết: </i>"33.990.000 ₫ "
+                    </span>
+                    <span id="price">
+                        <i>Giá bán: </i>"33.990.000 ₫ "
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>   
+        <div class="container s5">
+            <div class="row">
+                <div class="col-md-8">
+                    <div>
+                        <h4>ĐẶC ĐIỂM NỔI BẬT</h4>
+                    </div>
+                    <div>
+                        <h5>Laptop Lenovo Ideapad 5 15ALC05 82LN00APVN (Ryzen 7 5700U/ 8Gb/ 512Gb SSD/ 15.6inch FHD/ VGA
+                            ON/ Win10/ PLATINUM_GREY)</h5>
+                    </div>
+                    <div id="detail">
+                        <p>Laptop Lenovo Ideapad 5 không chỉ là một laptop mỏng nhẹ đơn thuần mà còn là một phụ kiện
+                            thời trang. Được định hướng đến nhu cầu học tập - văn phòng của người dùng, nhưng chiếc
+                            laptop Lenovo không vì thế mà kém đi sự tinh tế tỉ mỉ trong thiết kế, cùng với sức mạnh hiệu
+                            năng bền bỉ.</p>
+                        <img src="image/detail-pro/43750_ideapad_5_15_ha1.jpg" alt="">
+                        <p><b>Phong thái sang trọng quý phái</b></p>
+                        <p>IdeaPad 5 được thiết kế là một laptop mỏng nhẹ, máy dày 1.69 cm và chỉ nặng 1.39kg, với sự tỉ
+                            mỉ đến từng chi tiết hơn bao giờ hết. Thêm vào đó, lớp sơn cực bền tạo cảm giác mượt mà của
+                            mặt vải khiến người dùng cảm thấy thoải mái và dễ chịu khi chạm vào thiết bị.</p>
+                        <img src="image/detail-pro/43750_ideapad_5_15_ha2.jpg" alt="">
+                        <p><b>Sức mạnh phục vụ nhiều nhu cầu làm việc</b></p>
+                        <p>IdeaPad Slim 5 có mọi thứ bạn cần cho yêu cầu học tập - văn phòng và còn hơn thế nữa nhờ sở
+                            hữu sự kết hợp mạnh mẽ giữa các thiết bị phần cứng, mang lại hiệu năng mạnh mẽ về kết nối và
+                            giải trí phục vụ cho yêu cầu di chuyển liên tục của người dùng, được trang bị bộ vi xử lý
+                            AMD Ryzen 5 4500U tích hợp đồ họa Radeon Graphics không chỉ giải quyết các công việc học tập
+                            - văn phòng thông dụng nhanh chóng, mà còn xử lí mượt các tác vụ đồ họa như photoshop, dựng
+                            video ngắn... đồng thời tiết kiệm đáng kể điện năng.</p>
+                        <img src="image/detail-pro/43750_ideapad_5_15_ha3.jpg" alt="">
+                        <p>Bộ nhớ RAM 8G phục vụ nhu cầu công việc tính toán mượt mà, ổ cứng SSD 512 GB thoải mái lưu
+                            trữ dữ liệu nhanh chóng với số lượng lớn.</p>
+                        <p><b>Hình ảnh âm thanh sắc nét</b></p>
+                        <p>Laptop Lenovo Ideapad 5 được thiết kế màn hình màn hình 14 inch FHD tinh tế, với miền cạnh
+                            mỏng giúp cho người dùng có thêm nhiều không gian hiển thị hình ảnh hơn, mang lại trải
+                            nghiệm xem rộng lớn hơn. Kích thước màn hình lên đến 90% sơ với toàn bộ viền thân trên.</p>
+                        <p>Âm thanh phong phú trên loa của Ideapad 5 đã được tinh chỉnh nhờ tích hợp công nghệ Dolby
+                            Audio™.</p>
+                        <img src="image/detail-pro/43750_ideapad_5_15_ha4.jpg" alt="">
+                        <p><b>Bảo mật cao cấp</b></p>
+                        <p>Bạn hoàn toàn thoát khỏi mối lo bị ghi hình trộm qua camera nhờ màn che bảo mật webcam.</p>
+                        <p>Laptop Lenovo được trang bị đầy đủ kết nối không dây: 802.11ac 2x2 Wi-Fi + Bluetooth 5.1, M.2
+                            Card</p>
+                        <p>Cổng giao tiếp 2 x USB 3.1 Gen 1 Type-A (one Always On) ; 1 x USB 3.1 Gen 1 Type-C ; 1 x HDMI
+                            ; 1 x Headphone/Microphone combo jack ; 1 x SATA3 (no cable) ; 1 x Novo button</p>
+                        <p>Sản phẩm hiện đang có bán tại Phúc Anh với chế độ bảo hành 24 tháng cùng gói bảo hành cao cấp
+                            Lenovo Premium Care</p>
+                            
+                    </div>
+                    <div class="click">
+                        <button id="show1">Đọc thêm</button>
+                    </div>
+                    <div id="detail-table">
+                                <h5 class="h-title">Thông số kỹ thuật</h5>
+                                <div id="tableID">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td id="td1">Sản phẩm</td>
+                                                <td>Máy tính xách tay</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Tên Hãng</td>
+                                                <td>Lenovo</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Model</td>
+                                                <td>Ideapad Slim 5 15ALC05 82LN00APVN</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Bộ VXL</td>
+                                                <td>Ryzen 7 5700U (8C / 16T, 1.8 / 4.3GHz, 4MB
+                                                    L2 / 8MB L3)</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Cạc đồ họa</td>
+                                                <td>Integrated AMD Radeon Graphics</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Bộ nhớ</td>
+                                                <td>8GB DDR4-3200 soldered memory, not
+                                                    upgradable</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Ổ cứng/ Ổ đĩa quang</td>
+                                                <td>512GB SSD M.2 2242 PCIe 3.0x4 NVMe<br> Up
+                                                    to 2 drives, 1x 2.5" HDD + 1x M.2 2242/2280 SSD<br> • 2.5" HDD up to 1TB<br>
+                                                    • M.2 2242 SSD up to 512GB<br> • M.2 2280 SSD up to 512GB</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Màn hình</td>
+                                                <td>15.6" FHD (1920x1080) IPS 300nits
+                                                    Anti-glare, 45% NTSC</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Kết nối</td>
+                                                <td>
+                                                    <p>11ac, 2x2 + BT5.0</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Cổng giao tiếp</td>
+                                                <td>1x card reader<br> 1x USB 3.2 Gen 1<br> 1x
+                                                    USB 3.2 Gen 1 (Always On)<br> 1x HDMI 1.4b<br> 1x headphone / microphone
+                                                    combo jack (3.5mm)<br> 1x USB-C 3.2 Gen 1 (support data transfer, Power
+                                                    Delivery 3.0 and DisplayPort 1.2)</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Webcam</td>
+                                                <td>Có</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Nhận dạng vân tay</td>
+                                                <td>Không có</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Nhận diện khuôn mặt</td>
+                                                <td>Không có</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Tính năng khác</td>
+                                                <td>Màn hình Full HD</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Hệ điều hành</td>
+                                                <td>Windows 10 Home</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Pin</td>
+                                                <td>3 cell</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Kích thước</td>
+                                                <td>356.67 x 233.13 x 17.9-19.9 mm (14.04 x
+                                                    9.18 x 0.7-0.78 inches)</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Trọng lượng</td>
+                                                <td>1.66 kg</td>
+                                            </tr>
+                                            <tr>
+                                                <td id="td1">Màu sắc/ Chất liệu</td>
+                                                <td>Blue/vỏ nhôm</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="click">
+                                <button id="show2">Đọc thêm</button>
+                            </div>
+                    <div class="video">
+                        <h4>VIDEO</h4>
+                        <div>
+                            <video controls="" autoplay="">
+                                <source src="https://www.youtube.com/watch?v=gaQ5xxqVn30" type="">
+                            </video>
+                        </div>
+                          <h4>SẢN PHẨM LIÊN QUAN</h4>
+                    </div>
+                        <div class="search-comment">
+                            <h4>BÌNH LUẬN VỀ SẢN PHẨM</h4>
+                            <div>
+                                <div class="comment">
+                                    <a>Sắp xếp bình luận:</a>
+                                    <a href="">Mới Nhất</a>
+                                    <a>|</a>
+                                    <a href="">Thích nhất</a>
+                                </div>
+                                <div class="search-cmt">
+                                        <input type="search" id="searchID" placeholder="Tìm kiếm bình luận..." />
+                                        <select style="outline: none;" id="search-type">
+                                            <option value="">Tất cả</option>
+                                            <option value="">Thao nội dung</option>
+                                            <option value="">Thao người gửi</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="info">
+                                 <div class="avt">
+                                    <img src="image/icon/noavatar.jpg" alt="">    
+                                </div>  
+                                <div class="textarea">
+                                    <textarea name="" id="box-chat" placeholder=" Mời bạn thảo luật, vui lòng nhập chữ có dấu"></textarea>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Nhập thông tin để bình luận</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" placeholder="Họ tên(bắt buộc)">
+                                            </td>
+                                            <td>
+                                                <input type="text" placeholder="Email(bắt buộc)">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <button><a>Gửi bình luận</a></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <p id="news">TIN TỨC LIÊN QUAN</p>
+                    </div>
+                    <div>
+                        <a class="img-news" href="">
+                            <img src="image/detail-pro/120_8965_logo2_result.PNG" alt="">
+                            <span>
+                                <h3 class="name">[Review] LAPTOP LENOVO IDEAPAD 5 15ALC05 - SANG TRỌNG CÙNG CPU MẠNH MẼ
+                                </h3>
+                            </span>
+                        </a>
+                        <div class="newsID">
+                            <p>Laptop Lenovo Ideapad 5 15ALC05 82LN00APVN (Ryzen 7 5700U/ 8Gb/ 512Gb SSD/ 15.6inch FHD/
+                                VGA ON/ Win10/ PLATINUM_GREY)</p>
+                            <table class="news">
+                                <tbody>
+                                    <tr>
+                                        <td>Giá niêm yết</td>
+                                        <td id="price-listing"><b>19.490.000 ₫</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Giá bán:</b></td>
+                                        <td id="price"><b>17.990.000 ₫</b>[Giá đã có VAT]</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Giá khuyến mãi</b></td>
+                                        <td>
+                                            <span id="sale1"><b>17.790.000 ₫</b></span>
+                                            <span id="sale2">Giảm thêm 200.00 ₫ khi quẹt VNPAY <a href="">(Xem chi
+                                                    tiết)</a></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Ưu đãi và quà tặng khuyến mãi:</p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Từ ngày 1/7 đến 31/07/2021, Tặng bộ quà trị giá 1.000.000Đ
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Tai nghe thời trang
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Chuột không dây
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Bàn di chuột
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Bộ vệ sinh
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Balo Lenovo
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Tặng gói bảo trì, bảo dưỡng laptop miễn phí tại Phúc Anh
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Giảm 20% cặp or balo thời trang Targus, Tucano, POSO… khi mua kèm
+                                            laptop
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Giảm 10% ram laptop, ổ cứng HDD laptop, phụ kiện Ugreen các loại khi
+                                            mua kèm laptop
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Giảm 5% ổ cứng di động khi mua kèm laptop
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="but">
+                                <button class="btn1">
+                                    <span><b>MUA NGAY</b></span>
+                                    <span><a>Giao hàng tận nơi nhanh chóng</a></span>
+                                </button>
+                                <button class="btn2">
+                                    <span><b>MUA TRẢ GÓP</b></span>
+                                    <span><a>Thủ tục đơn giản</a></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="line"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>
+                        <p id="fb">FACEBOOK</p>
+                    </h2>
+                    <iframe name="f12488f86db2bc" width="450px" height="215px"
+                        data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin"
+                        frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no"
+                        allow="encrypted-media"
+                        src="https://www.facebook.com/v10.0/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df21b91d4627c25c%26domain%3Dwww.phucanh.vn%26origin%3Dhttps%253A%252F%252Fwww.phucanh.vn%252Ff18c5c09dfb7b88%26relation%3Dparent.parent&amp;container_width=0&amp;height=215&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fphucanhsmartworld%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=&amp;width=500"
+                        style="border: none; visibility: visible; width: 500px; height: 130px;" class="">
+                    </iframe>
+                </div>
+                <div class="col-md-6">
+                    <h2>
+                        <p id="TongDai">Tổng đài hỗ trợ</p>
+                    </h2>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            <span id="hotline">
+                                                <i class="fas fa-phone-alt"> Bán hàng trực tuyến:</i>
+                                            </span>
+                                            <b id="number">1900 2164</b>- nhánh số 1 (8h15- 20h30)
+                                        </p>
+                                        <p>
+                                            <span id="hotline">
+                                                <i class="fas fa-phone-alt"> Bán hàng dự án và doanh nghiệp:</i>
+                                            </span>
+                                            <b id="number">1900 2164</b>- Nhánh số 2 (8h15- 17h15, Thứ 2- Thứ 7)
+                                        </p>
+
+                                        <p>
+                                            <span id="hotline">
+                                                <i class="fas fa-phone-alt"> Tư vấn mua trả góp:</i>
+                                            </span>
+                                            <b id="number">094 558 23 23</b>(8h15- 20h30)
+                                        </p>
+                                    </td>
+                                    <td style="padding-left: 20px">
+                                        <p style="margin-bottom: 0;">
+                                            <span id="hotline">
+                                                <i class="fas fa-phone-alt"> Hỗ trợ kỹ thuật:</i>
+                                            </span>
+                                            <b id="number">1900 2165</b>(8h15- 17h15, Thứ 2- Thứ 7)
+                                        </p>
+                                        <p>
+                                            <span id="hotline">
+                                                <i class="fas fa-phone-alt"> Tra cứu bảo hành- Yêu cầu dịch vụ:</i>
+                                            </span>
+                                            <b id="number">1900 2173</b>(8h15-17h15, Thứ 2- Thứ 7)
+                                        </p>
+                                        <p>
+                                            <span id="hotline">
+                                                <i class="fas fa-phone-alt"> Góp ý, khiếu nại:</i></span>
+                                            <b id="number">1900 2174</b>(8h15-20h)
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <div class="logo-img">
+                        <b>ĐỐI TÁC KINH DOANH</b>
+                        <img src="image/logo/acer.png" alt=""> <img src="image/logo/akko.jpg" alt=""> <img
+                            src="image/logo/akracing.png" alt="">
+                        <img src="image/logo/apple.png" alt=""><img src="image/logo/asus.png" alt=""> <img
+                            src="image/logo/balion.jpg" alt="">
+                        <img src="image/logo/canon.jpg" alt=""> <img src="image/logo/coolermaster.jpg" alt=""> <img
+                            src="image/logo/corsair.png" alt="">
+                        <img src="image/logo/dell.png" alt=""> <img src="image/logo/edra.jpg" alt=""> <img
+                            src="image/logo/gigabyte.jpg" alt="">
+                        <img src="image/logo/gskill.jpg" alt=""><img src="image/logo/honeywell.png" alt=""> <img
+                            src="image/logo/hp.png" alt="">
+                        <img src="image/logo/inno3d.jpg" alt=""> <img src="image/logo/jabra.png" alt=""> <img
+                            src="image/logo/kingston.jpg" alt="">
+                        <img src="image/logo/lenovo.png" alt=""> <img src="image/logo/lg.jpg" alt=""> <img
+                            src="image/logo/logitech.png" alt="">
+                        <img src="image/logo/ronaldjack.jpg" alt=""><img src="image/logo/samsung.jpg" alt=""><img
+                            src="image/logo/seagate.jpg" alt="">
+                        <img src="image/logo/sony.jpg" alt=""><img src="image/logo/tplink.png" alt=""><img
+                            src="image/logo/tsc.jpg" alt="">
+                        <img src="image/logo/xiaomi.png" alt="">
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="padding-right: 50px; vertical-align: top;">
+                                    <div class="row1">
+                                        <b>Thông tin công ty</b>
+                                        <a href="">Giới thiệu công ty</a>
+                                        <a href="">Thông tin liên hệ</a>
+                                        <a href="">Thông tin tuyển dụng</a>
+                                        <a href="">Điều khoản giao dịch</a>
+                                        <a href="">Chính sách bảo mật thông tin khách hàng</a>
+                                    </div>
+                                </td>
+                                <td style="padding-right: 50px; vertical-align: top;">
+                                    <div class="row1">
+                                        <b>Quy định & chính sách</b>
+                                        <a href="">Chính sách kinh doanh</a>
+                                        <a href="">Ưu đãi cho khách hàng doanh nghiệp</a>
+                                        <a href="">Ưu đãi cho khách hàng Game-Net</a>
+                                        <a href="">Chính sách vận chuyển và giao nhận</a>
+                                        <a href="">Chính sách bảo hành</a>
+                                        <a href="">Chính sách đổi trả sản phẩm</a>
+
+                                    </div>
+                                </td>
+                                <td style="padding-right: 50px; vertical-align: top;">
+                                    <div class="row1">
+                                        <b>Hỗ trợ khách hàng</b>
+                                        <a href="">Hướng dẫn mua hàng online</a>
+                                        <a href="">Hướng dẫn mua hàng trả góp</a>
+                                        <a href="">Phương thức thanh toán</a>
+                                        <a href="">Yêu cầu báo giá</a>
+                                        <a href="">Liên hệ kỹ thuật</a>
+                                        <a href="">Góp ý khiếu nại</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row2">
+                                        <a href="">
+                                            <img src="image/icon/dathongbao.png" alt="">
+                                        </a>
+                                        <span>
+                                            <p><button>Đăng ký</button> nhận tin Khuyến Mãi</p>
+                                        </span>
+                                        <input type="text" id="my-email" placeholder="Nhập địa chỉ email của ban">
+                                        <button>GỬI NGAY</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="footer">
+            <div class="container ">
+                <div id="footerID">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td id="td">
+                                    <div class="add">
+                                        <b>PHÒNG BÁN HANG TRỰC TUYẾN</b>
+                                        <a href="">Địa chỉ: Tầng 4, 134 Thái Hà, Đống Đa, Hà Nội</a>
+                                        <a href="">Điện thoại: 1900 2164(ext 1)</a>
+                                        <a href="">Email: banhangonline@phucanh.com.vn</a>
+                                        <a href="">[Bản đồ đương đi]</a>
+                                    </div>
+                                </td>
+                                <td id="td">
+                                    <div class="add">
+                                        <b>SHOWROOM PHÚC ANH 15 XÃ ĐÀN</b>
+                                        <a href="">Địa chỉ: 15 Xã Đàn, Đống Đa, Hà Nội</a>
+                                        <a href="">Điện thoại:(024) 35737383"</a>
+                                        <a href=""> hoặc (024) 39689966 (ext1)</a>
+                                        <a href="">Email: phucanh.xadan@phucanh.com.vn</a>
+                                        <a href="">Giờ mở cửa từ 08h15 đến 21h00</a>
+                                    </div>
+                                </td>
+                                <td id="td">
+                                    <div class="add">
+                                        <b>SHOWROOM PHÚC ANH 15 XÃ ĐÀN</b>
+                                        <a href="">Địa chỉ: 15 Xã Đàn, Đống Đa, Hà Nội</a>
+                                        <a href="">Điện thoại:(024) 35737383 "</a>
+                                        <a href="">hoặc (024) 39689966 (ext1)</a>
+                                        <a href="">Email: phucanh.xadan@phucanh.com.vn</a>
+                                        <a href="">Giờ mở cửa từ 08h15 đến 21h00</a>
+                                    </div>
+                                </td>
+                                <td id="td">
+                                    <div class="add">
+                                        <b>SHOWROOM PHÚC ANH 15 XÃ ĐÀN</b>
+                                        <a href="">Địa chỉ: 15 Xã Đàn, Đống Đa, Hà Nội</a>
+                                        <a href="">Điện thoại:(024) 35737383"</a>
+                                        <a href=""> hoặc (024) 39689966 (ext1)</a>
+                                        <a href="">Email: phucanh.xadan@phucanh.com.vn</a>
+                                        <a href="">Giờ mở cửa từ 08h15 đến 21h00</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="footerID">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td id="tdID">
+                                    <div class="add">
+                                        <b>SHOWROOM PHÚC ANH 15 XÃ ĐÀN</b>
+                                        <a href="">Địa chỉ: 15 Xã Đàn, Đống Đa, Hà Nội</a>
+                                        <a href="">Điện thoại:(024) 35737383"</a>
+                                        <a href=""> hoặc (024) 39689966 (ext1)</a>
+                                        <a href="">Email: phucanh.xadan@phucanh.com.vn</a>
+                                        <a href="">Giờ mở cửa từ 08h15 đến 21h00</a>
+                                    </div>
+                                </td>
+                                <td id="tdID">
+                                    <div class="add">
+                                        <b>SHOWROOM PHÚC ANH 15 XÃ ĐÀN</b>
+                                        <a href="">Địa chỉ: 15 Xã Đàn, Đống Đa, Hà Nội</a>
+                                        <a href="">Điện thoại:(024) 35737383"</a>
+                                        <a href=""> hoặc (024) 39689966 (ext1)</a>
+                                        <a href="">Email: phucanh.xadan@phucanh.com.vn</a>
+                                        <a href="">Giờ mở cửa từ 08h15 đến 21h00</a>
+                                    </div>
+                                </td>
+                                <td id="tdID">
+                                    <div class="add">
+                                        <b>SHOWROOM PHÚC ANH 15 XÃ ĐÀN</b>
+                                        <a href="">Địa chỉ: 15 Xã Đàn, Đống Đa, Hà Nội</a>
+                                        <a href="">Điện thoại:(024) 35737383 </a>
+                                        <a href="">hoặc (024) 39689966 (ext1)</a>
+                                        <a href="">Email: phucanh.xadan@phucanh.com.vn</a>
+                                        <a href="">Giờ mở cửa từ 08h15 đến 21h00</a>
+                                    </div>
+                                </td>
+                                <td id="tdID">
+                                    <div class="add">
+                                        <b>SHOWROOM PHÚC ANH 15 XÃ ĐÀN</b>
+                                        <a href="">Địa chỉ: 15 Xã Đàn, Đống Đa, Hà Nội</a>
+                                        <a href="">Điện thoại:(024) 35737383"</a>
+                                        <a href=""> hoặc (024) 39689966 (ext1)</a>
+                                        <a href="">Email: phucanh.xadan@phucanh.com.vn</a>
+                                        <a href="">Giờ mở cửa từ 08h15 đến 21h00</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

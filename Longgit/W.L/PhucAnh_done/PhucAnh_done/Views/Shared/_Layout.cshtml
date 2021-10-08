@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/Asset/client/css/bootstrap.css">
+
+    <link rel="stylesheet" href="~/Asset/client/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="~/Asset/client/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="~/Asset/client/slick-1.8.1/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="~/asset/client/css/styles.css">
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="~/Asset/client/js/bootstrap.min.js"></script>
+    <script src="~/Asset/client/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="~/Asset/client/js/main.js"></script>
+</head>
+<body>
+    @{Html.RenderAction("header", "Layout");}
+    <div>
+        @RenderBody()
+    </div>
+    @{Html.RenderAction("footer", "Layout");}
+</body>
+</html>

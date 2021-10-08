@@ -1,0 +1,104 @@
+﻿@using Microsoft.AspNet.Identity
+@using Web_PA.Models;
+@using Web_PA.Common;
+@{
+    var phanLoaiTheoHang = ViewData["phanLoaiTheoHang"] as List<PhanLoaiTheoHangSp> ?? new List<PhanLoaiTheoHangSp>();
+    var loaiDanhMucSanPham = ViewData["loaiDanhMucSanPham"] as List<LoaiDanhMucSanPham> ?? new List<LoaiDanhMucSanPham>();
+    var loaiDMSP = ViewData["loaiDMSP"] as List<DanhMucSanPham> ?? new List<DanhMucSanPham>();
+    var DanhMuc = ViewData["DanhMuc"] as List<PhanLoaiSanPham> ?? new List<PhanLoaiSanPham>();
+    Layout = null;
+}
+
+<body>
+    <section>
+        <div class="container">
+            <div class="row top">
+                <div class="col-md-2">
+                    <ul>
+                        <li>
+                            <a href=""> Hệ Thống Showroom</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <i class="fas fa-gifts"></i>
+                                Khuyến mãi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="far fa-newspaper"></i>
+                                Tin tức
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fas fa-phone-alt"></i>
+                                Xây dựng cấu hình
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                                In hoá đơn điện tử
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">Tra cứu bảo hành</a>
+                        </li>
+                        <li>
+                            <a href="">Mua trả góp</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    @{if (Request.IsAuthenticated)
+                        {
+                            <div class="menu-lv1">
+                                <li class="acc">
+                                    <a href=""><i class="fa fa-user fa-fw"></i></a><samp id="idAcc">@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</samp>
+
+                                    <ul class="menu-lv1-content">
+                                        <li>
+                                            <a href="/User/Logout"><b> Đăng xuất</b></a>
+                                        </li>
+                                        <li>
+                                            <a href="/changePassword"><b> Thay đổi mật khẩu</b></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="menu-lv1">
+                                <li class="acc">
+                                    <a href=""><i class="fa fa-user fa-fw"></i></a><samp id="idAcc">Tài Khoản</samp>
+                                    <ul class="menu-lv1-content">
+                                        <li>
+                                            <a href="/login"><b>Đăng nhập</b></a>
+                                        </li>
+                                        <li>
+                                            <a href="/signup"><b> Đăng ký</b></a>
+                                        </li>
+                                        <li>
+                                            <a href="/admin/login"><b>Quản lý hệ thống</b></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    @Html.Partial("~/Views/Layout/mobile_header.cshtml")
+</body>
+
+
+

@@ -1,0 +1,146 @@
+﻿@model PhucAnh_done.Models.DanhMucSanPham
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<<div class="content container col-md-6">
+
+    @using (Html.BeginForm("Edit", "DanhMucSanPham", FormMethod.Post))
+    {
+        <div class="form-horizontal">
+            <h4 style="text-align:center;color:blue">Chỉnh sửa Danh Mục Sản Phẩm</h4>
+            <hr />
+            <div class="form-group">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                @if (ViewBag.Success != null)
+                {
+                    <div class="alert alert-success">@ViewBag.Success</div>}
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TenDanhMucSanPham, new { @class = " col-md-4" })
+                <div class="col-md-6">
+                    @Html.TextBoxFor(model => model.TenDanhMucSanPham, new { required = true, @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TenDanhMucSanPham, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.GhiChu, htmlAttributes: new { @class = " col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.GhiChu, new { type = "date", htmlAttributes = new { @class = "form-control" }, Styles = " margin-left: 80px;" })
+                    @Html.ValidationMessageFor(model => model.GhiChu, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Laptop___Linh_phụ_kiện, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Laptop___Linh_phụ_kiện)
+                        @Html.ValidationMessageFor(model => model.Laptop___Linh_phụ_kiện, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Điện_thoại__Tavlet___Phụ_kiện, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Điện_thoại__Tavlet___Phụ_kiện)
+                        @Html.ValidationMessageFor(model => model.Điện_thoại__Tavlet___Phụ_kiện, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Server___Workstation, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Server___Workstation)
+                        @Html.ValidationMessageFor(model => model.Server___Workstation, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PC_chơi_Game__Gaming_Gear, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.PC_chơi_Game__Gaming_Gear)
+                        @Html.ValidationMessageFor(model => model.PC_chơi_Game__Gaming_Gear, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Laptop_theo_khoảng_tiền, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Laptop_theo_khoảng_tiền)
+                        @Html.ValidationMessageFor(model => model.Laptop_theo_khoảng_tiền, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Linh_kiện_máy_tính, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Linh_kiện_máy_tính)
+                        @Html.ValidationMessageFor(model => model.Linh_kiện_máy_tính, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phụ_kiện_máy_tính___nghe_nhìn, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Phụ_kiện_máy_tính___nghe_nhìn)
+                        @Html.ValidationMessageFor(model => model.Phụ_kiện_máy_tính___nghe_nhìn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Màn_hình_máy_tính, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Màn_hình_máy_tính)
+                        @Html.ValidationMessageFor(model => model.Màn_hình_máy_tính, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Máy_tính_đồng_bộ, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Máy_tính_đồng_bộ)
+                        @Html.ValidationMessageFor(model => model.Máy_tính_đồng_bộ, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Thiết_bị_văn_phòng, htmlAttributes: new { @class = " col-md-3" })
+                <div class="col-md-5">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Thiết_bị_văn_phòng)
+                        @Html.ValidationMessageFor(model => model.Thiết_bị_văn_phòng, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-12">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+ <div>
+     @Html.ActionLink("Quay lại trang trước", "Index")
+ </div>

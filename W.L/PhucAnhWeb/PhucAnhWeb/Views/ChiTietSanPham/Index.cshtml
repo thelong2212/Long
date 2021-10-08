@@ -1,0 +1,406 @@
+﻿@using PhucAnhWeb.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var sanPham = ViewData["sanPham"] as SanPham;
+    var dsSanPhamLienQuan = ViewData["dsSanPhamLienQuan"] as List<SanPham>;
+    var ctSanPham = ViewData["ctSanPham"] as CTSanPham;
+    var ImgSanPham = ViewData["ImgSanPham"] as List<ImageSanPham> ?? new List<ImageSanPham>();
+}
+
+ @Html.Partial("~/Views/Shared/_menu.cshtml")
+<section>
+    <div class="container ">
+        <div id="breadcrumb">
+            <div>
+                <a href="/">
+                    <span>Trang chủ</span>
+                </a>
+            </div>
+            <div>
+                &nbsp;/&nbsp;<a href=""> <span>Laptop &amp; Linh phụ kiện</span> </a>
+            </div>
+            <div>
+                &nbsp;/&nbsp;<a href=""><span><a class="red">Laptop mỏng nhẹ</a></span> </a>
+            </div>
+        </div>
+        <div class="tile-product">
+            <h2>
+                @sanPham.TenSanPham
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="slider_detailProduct">
+                    <div class="slider-for">
+                        @foreach (var item in ImgSanPham)
+                        {
+                            if (item.Ảnh == null)
+                            {
+                                item.Ảnh = "~/Images/productImage/a.jpg";
+                            }
+                            <div><img src="@Url.Content(item.Ảnh)" alt=""></div>
+                        }
+                    </div>
+                    <div class="slider-nav">
+                        @foreach (var item in ImgSanPham)
+                        {
+                            if (item.Ảnh == null)
+                            {
+                                item.Ảnh = "~/Images/productImage/a.jpg";
+                            }
+                            <div>
+                                <span><img src="@Url.Content(item.Ảnh)" alt=""></span>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="table-left">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <i class="far fa-check-square"></i>
+                                    <a href="">
+                                        @sanPham.ThongTinSanPham
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="col-md-5">
+                <div>
+                    <span>
+                        <p>
+                            Đánh giá:
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </p>
+
+                    </span>
+                    <div class="table-mid">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td id="title_price">Giá niêm yết</td>
+                                    <td id="price-listing"><b>@(sanPham.GiaNiemYet + "₫")</b></td>
+                                </tr>
+                                <tr>
+                                    <td id="title_price"><b>Giá bán:</b></td>
+                                    <td id="price"><b>@(sanPham.GiaBan + "₫")</b>[Giá đã có VAT]</td>
+                                </tr>
+                                <tr>
+                                    <td id="title_price"><b>Giá khuyến mãi</b></td>
+                                    <td id="saleID">
+                                        <span id="sale1"><b>@(sanPham.GiaNiemYet + "₫")</b></span>
+                                        <span id="sale2">
+                                            Giảm thêm 200.00 ₫ khi quẹt VNPAY <a href="">
+                                                (Xem chi
+                                                tiết)
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="p">
+                            <a>
+                                <span>
+                                    Bảo hành: Chính hãng 24 tháng, bảo hành tại nơi sử dụng, đổi mới 30
+                                    ngày.
+                                </span>
+                            </a>
+                            <span>
+                                Giao hàng tận nơi miễn phí theo chính sách vận chuyển
+                                <a href="">(Xem chi tiết)</a>
+                            </span>
+
+                        </p>
+                        <div class="button">
+                            @{if (Request.IsAuthenticated)
+                                {
+                                    <button class="btn1">
+                                        <a href="/login">
+                                            <span><b>MUA NGAY</b></span>
+                                            <span><a>Giao hàng tận nơi nhanh chóng</a></span>
+                                        </a>
+                                    </button>
+                                    <button class="btn2">
+                                        <a href="/login">
+                                            <span><b>MUA TRẢ GÓP</b></span>
+                                            <span><a>Thủ tục đơn giản</a></span>
+                                        </a>
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button class="btn1">
+                                        <a href="/add/@sanPham.SanPhamID">
+                                            <span><b>MUA NGAY</b></span>
+                                            <span><a>Giao hàng tận nơi nhanh chóng</a></span>
+                                        </a>
+                                    </button>
+                                    <button class="btn2">
+                                        <a href="/add/@sanPham.SanPhamID">
+                                            <span><b>MUA TRẢ GÓP</b></span>
+                                            <span><a>Thủ tục đơn giản</a></span>
+                                        </a>
+                                    </button>
+                                    }
+                                }
+                            </div>
+                        <div class="sale">
+                            <ul>
+                                <li>
+                                    <i class="far fa-check-square"></i>
+                                    <a href="">
+                                        Quà ngập tràn - Giá sập sàn: Giảm tới 500.000đ khi mua
+                                        laptop
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="far fa-check-square"></i>
+                                    <a href=""> Mua aptop gaming giảm ngay 500.00đ </a>
+                                </li>
+                                <li>
+                                    <i class="far fa-check-square"></i>
+                                    <a href=""> Mua laptop Dell Gaming G-Series sở hữa ngay: 01(một) bôh quà tặng Dell Gaming cực chất</a>
+                                </li>
+                                <li>
+                                    <i class="far fa-check-square"></i>
+                                    <a href=""> Giảm tới 20% khi mua linh kiện, phụ kiện kèm laptop</a>
+                                </li>
+                                <li>
+                                    <i class="far fa-check-square"></i>
+                                    <a href=""> Ưu đãi giảm tới 6000.000 VNĐ khi mua phần mền Windows- Office- Diệt vỉut</a>
+                                </li>
+                                <li>
+                                    <i class="far fa-check-square"></i>
+                                    <a href=""> Khuyến mãi siêu HOT: PC siêu chất- Rinh Gấp Quà To</a>
+                                </li>
+                                <li>
+                                    <i class="far fa-check-square"></i>
+                                    <a href=""> Giảm tới 20% khi mua thiết bị văn phòng</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="line"></div>
+                        <div class="product-info">
+                            <div class="tiitle">
+                                <b>Ưu đãi và quà tặng khuyến mãi:</b>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Từ ngày 1/7 đến 31/07/2021, Tặng bộ quà trị giá 1.000.000Đ
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Tai nghe thời trang
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Chuột không dây
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Bàn di chuột
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Bộ vệ sinh
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Balo Lenovo
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Tặng gói bảo trì, bảo dưỡng laptop miễn phí tại Phúc Anh
+
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Giảm 20% cặp or balo thời trang Targus, Tucano, POSO… khi mua kèm
+                                            laptop
+
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Giảm 10% ram laptop, ổ cứng HDD laptop, phụ kiện Ugreen các loại khi
+                                            mua kèm laptop
+
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Giảm 5% ổ cứng di động khi mua kèm laptop
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col_detailPro">
+                <div>
+                    <p><a href="">BẠN MUỐN ĐẾN CỦA HÀNG?</a></p>
+                </div>
+                <div class="right-up">
+                    <div id="IDadd">
+                        <a href=""><b>Đang còn hàng tại:</b></a>
+                        <a href=""><b>(Bấm để xem đường dẫn)</b></a>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="">- Số 15 Xã Đàn, Q. Đống Đa, HN</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="">- Số 134 Thái Hà, Q. Đống Đa, HN</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="">- Số 152 Trần Duy Hưng, Q. Cầu Giấy, HN</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="">- Số 160 Phạm Văn Đồng, Q. Cầu Giấy, HN</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="">- Số 63 Nguyễn Hoàng, Q. Nam Từ Liêm, HN</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="right-bot">
+                    <div class="rb"> <b>Phúc Anh cam kết</b></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <i class="far fa-star"></i>
+                                    <a>100% sản phẩm chính hãng</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="far fa-star"></i>
+                                    <a>100% giá cạnh tranh so với thị trường</a>
+                                </td>
+                            </tr>
+                            <tr>
+                        </tbody>
+                    </table>
+                    <div class="rb"> <b>Mua hàng trả góp lãi suất 0%</b></div>
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="far fa-star"></i>
+                                <a>Giao hàng nhanh 2h và miễn phí giao hàng từ 500.000đ</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="far fa-star"></i>
+                                <a>Ưu đãi vàng dành cho khách hàng doanh nghiệp</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="far fa-star"></i>
+                                <a>Đổi mới sản phẩm đến 30 ngày </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="far fa-star"></i>
+                                <a>Dịch vụ bảo hành chuyên nghiệp, uy tín </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="pro-h4">
+            <h4>SẢN PHẨM TƯƠNG ĐƯƠNG</h4>
+        </div>
+        <div class="row img_table">
+            @foreach (SanPham item in dsSanPhamLienQuan)
+            {
+                if (item.AnhSanPham == null)
+                {
+                    item.AnhSanPham = "~/Images/productImage/a.jpg";
+                }
+                <div class="col-md-3 col" id="img-table-1">
+                        <img src="@Url.Content(item.AnhSanPham)" alt="">
+                    <a href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+                    <span style="font-size: 12px;">
+                        <i id="list-price">Giá niêm miết: </i>@(item.GiaNiemYet+ "VND")
+                    </span>
+                    <span id="price">
+                        <i>Giá bán: </i>@(item.GiaBan+ "VND")
+                    </span>
+                </div>
+
+            }
+        </div>
+        
+        <div class="responsive">
+            @foreach (SanPham item in dsSanPhamLienQuan)
+            {
+                <div class="mobile_product">
+                    <div class="col-md-3 col" id="img-table-1">
+                        <img src="@Url.Content(item.AnhSanPham)" alt="">
+                        <a class="name_product_mobile" href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+
+                    </div>
+                    <div>
+                        <span id="price">
+                            <i>Giá bán: </i>@(item.GiaBan)
+                        </span>
+                    </div>
+                </div>
+            }
+            </div>
+    </div>
+</section>

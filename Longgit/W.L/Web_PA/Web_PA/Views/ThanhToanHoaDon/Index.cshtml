@@ -1,0 +1,138 @@
+﻿@using Web_PA.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var UserLogin = ViewData["UserLogin"] as User;
+    var phanLoaiTheoHang = ViewData["phanLoaiTheoHang"] as List<PhanLoaiTheoHangSp> ?? new List<PhanLoaiTheoHangSp>();
+    var loaiDanhMucSanPham = ViewData["loaiDanhMucSanPham"] as List<LoaiDanhMucSanPham> ?? new List<LoaiDanhMucSanPham>();
+    var loaiDMSP = ViewData["loaiDMSP"] as List<DanhMucSanPham> ?? new List<DanhMucSanPham>();
+    var DanhMuc = ViewData["DanhMuc"] as List<PhanLoaiSanPham> ?? new List<PhanLoaiSanPham>();
+}
+@model GioHang
+
+@Html.Partial("~/Views/Shared/_menu.cshtml")
+<section>
+    <div class="container">
+        <div class="row nowrap">
+            <div class="col-8 col-lg-8 col-sm-8" id="col8_pay_ID">
+                <div>
+                    <h5> Tổng sản phẩm: @Model.TongSoLuong sản phẩm</h5>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            Tên sản phẩm
+                        </th>
+                        <th>
+                            Đơn giá
+                        </th>
+                        <th>
+                            Số lượng sản phẩm
+                        </th>
+                        <th>
+                            Thành tiền
+                        </th>
+                    </tr>
+                    @foreach (var item in Model.Gio)
+                    {
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-4">
+                                        @{
+                                            var AnhSanPham = item.SanPham.AnhSanPham;
+                                            <img src="@Url.Content(AnhSanPham)" style="width: 100%;" class="img-responsive" alt="anh san pham">
+                                        }
+                                    </div>
+                                    <div class="col-8">
+                                        @item.SanPham.TenSanPham
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                @item.SanPham.GiaBan
+                            </td>
+                            <td>
+                                @item.SoLuong
+                            </td>
+                            <td>
+                                @item.TongTien
+                            </td>
+                        </tr>
+                    }
+                </table>
+                <div>
+                    <h5>Tổng tiền: @Model.TongTien (VND)</h5>
+                </div>
+            </div>
+            <div class="col-4 col-lg-4 col-sm-4" id="col4_pay_ID">
+                <h5>Xác nhận thông tin thanh toán</h5>
+                <div>
+                    @{
+                        if (UserLogin != null)
+                        {
+                            <form action="/xac-nhan-thanh-toan" method="post" target="_blank">
+                                <div class="form-group">
+                                    <label for="hoTen">Họ tên</label>
+                                    <input class="form-control" required type="text" name="hoTen" id="hoTen" placeholder="Họ tên" value="@UserLogin.Name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input class="form-control" required type="email" name="email" id="email" placeholder="Email" value="@UserLogin.Email" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="soDienThoai">Số điện thoại</label>
+                                    <input class="form-control" required type="text" name="soDienThoai" id="soDienThoai" placeholder="Số điện thoại" value="@UserLogin.Phone" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="diaChi">Địa chỉ</label>
+                                    <input class="form-control" required type="text" name="diaChi" id="diaChi" placeholder="Địa chỉ" value="@UserLogin.DiaChiChiTiet" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="diaChiNhanHang">Địa chỉ nhận hàng</label>
+                                    <input class="form-control" required type="text" name="diaChiNhanHang" id="diaChiNhanHang" placeholder="địa chỉ nhận hàng" value="@UserLogin.DiaChiChiTiet" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="ghiChu">Ghi chú</label>
+                                    <textarea rows="5" class="form-control" required name="ghiChu" id="ghiChu" placeholder="Ghi chú"></textarea>
+                                </div>
+                                <input style="width: 100%" class="btn btn-dark" type="submit" name="name" value="Xác nhận thanh toán" />
+                            </form>
+                        }
+                        else
+                        {
+                            <form action="/xac-nhan-thanh-toan" method="post" target="_blank">
+                                <div class="form-group">
+                                    <label for="hoTen">Họ tên</label>
+                                    <input class="form-control" required type="text" name="hoTen" id="hoTen" placeholder="Họ tên" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input class="form-control" required type="email" name="email" id="email" placeholder="Email" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="soDienThoai">Số điện thoại</label>
+                                    <input class="form-control" required type="text" name="soDienThoai" id="soDienThoai" placeholder="Số điện thoại" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="diaChi">Địa chỉ</label>
+                                    <input class="form-control" required type="text" name="diaChi" id="diaChi" placeholder="Địa chỉ" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="diaChiNhanHang">Địa chỉ nhận hàng</label>
+                                    <input class="form-control" required type="text" name="diaChiNhanHang" id="diaChiNhanHang" placeholder="địa chỉ nhận hàng" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="ghiChu">Ghi chú</label>
+                                    <textarea rows="5" class="form-control" required name="ghiChu" id="ghiChu" placeholder="Ghi chú"></textarea>
+                                </div>
+                                <input style="width: 100%" class="btn btn-dark" type="submit" name="name" value="Xác nhận thanh toán" />
+                            </form>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

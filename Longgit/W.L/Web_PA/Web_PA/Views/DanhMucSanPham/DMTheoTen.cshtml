@@ -1,0 +1,354 @@
+﻿@using Web_PA.Models;
+@{
+    ViewBag.Title = "DMTheoTen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var TenDMPhanTheoTen = ViewBag.TenDMPhanTheoTen as string;
+    var ListDMTheoTen = ViewData["ListDMTheoTen"] as List<SanPham> ?? new List<SanPham>();
+}
+
+@Html.Partial("~/Views/Shared/_menu.cshtml")
+<section>
+    <div class="container">
+        <div id="breadcrumb">
+            <div>
+                <a href=""><span>@TenDMPhanTheoTen</span> </a>
+            </div>
+        </div>
+        <div class="row slider_product">
+            <div class="col-md-7 slider" id="slider1">
+                <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/asset/client/image/bn-product/bnr-left/01_Jul19e985a1773196d87f1b4a129a722986.jpg" class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/asset/client/image/bn-product/bnr-left/01_Jul73bf2ec7f84c50de72f24b69025df205.jpg" class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/asset/client/image/bn-product/bnr-left/01_Julf8c952e3af92bb875f809f5c8d8f676f.jpg" class="d-block w-100" alt="">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-5 slider" id="slider2">
+                <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/asset/client/image/bn-product/bnr-right/16_Apre64d6e066105a37d4260dfee0807e807.jpg" class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/asset/client/image/bn-product/bnr-right/01_Jul0bda0127305f112bc8e4cef67063bebb.png" class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/asset/client/image/bn-product/bnr-right/03_Augca538c343179bf0fbdfab6cd10469afd.jpg" class="d-block w-100" alt="">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 product">
+                <div class="SoLuongSP">
+                    <strong>Tất cả @ListDMTheoTen.Count() sản phẩm @TenDMPhanTheoTen</strong>
+                </div>
+                <div class="row img-table">
+                    @foreach (var item in ListDMTheoTen)
+                    {
+                        if (item.AnhSanPham == null)
+                        {
+                            item.AnhSanPham = "~/images/product/a.jpg";
+                        }
+                        <div class="col-md-3 col" id="img-table-1">
+                            <img src="@Url.Content(item.AnhSanPham)" alt="">
+                            <a href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+                            <span style="font-size: 12px;">
+                                <i id="list-price">Giá niêm miết: </i>@(item.GiaNiemYet + "VND")
+                            </span>
+                            <span id="price">
+                                <i>Giá bán: </i>@(item.GiaBan)
+                            </span>
+                            <span id="pro-icon">
+                                <a href="/detailProduct/@item.SanPhamID" class="fas fa-shopping-cart" id="cart">
+                                    Giỏ hàng
+                                </a>
+                            </span>
+                        </div>
+                        <div class="responsive">                      
+                                <div class="mobile_product">
+                                    <div class="col-md-3 col" id="img-table-1">
+                                        <img src="@Url.Content(item.AnhSanPham)" alt="">
+                                        <a class="name_product_mobile" href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+                                    </div>
+                                    <div>
+                                        <span id="price">
+                                            <i>Giá bán: </i>@(item.GiaBan)
+                                        </span>
+                                    </div>
+                                </div>                          
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <div class="col-md-3 check_box">
+                <div class="filter-left">
+                    <div class="title-logo">Thương hiệu</div>
+                    <div class="list two-col">
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Acer (11)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Apple (34)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Asus (52)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                ConceptD (1)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Dell (33)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                HP (28)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                Lenovo (42)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                LG (14)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                Microsoft (31)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                MSI (9)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-left">
+                    <div class="title-logo">Thương hiệu</div>
+                    <div class="list two-col">
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Acer (11)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Apple (34)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Asus (52)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                ConceptD (1)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Dell (33)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                HP (28)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                Lenovo (42)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                LG (14)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                Microsoft (31)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                MSI (9)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-left">
+                    <div class="title-logo">Thương hiệu</div>
+                    <div class="list two-col">
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Acer (11)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Apple (34)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Asus (52)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                ConceptD (1)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                Dell (33)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                HP (28)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                Lenovo (42)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox">
+                                    <input type="checkbox" onclick=""><span class="icon"></span>
+                                </span>
+                                LG (14)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                Microsoft (31)
+                            </label>
+                        </div>
+                        <div class="item-logo">
+                            <label>
+                                <span class="checkbox"><input type="checkbox" onclick=""></span></span>
+                                MSI (9)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

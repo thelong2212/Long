@@ -1,0 +1,76 @@
+﻿@model PagedList.IPagedList<PhucAnhWeb.Models.LoaiDanhMucSanPham>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Loại danh mục sản phẩm</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary"></h6>
+        </div>
+        <div class="card-body">
+            <div class="panel-body">
+                @using (Html.BeginForm("Index", "LoaiDMSP", FormMethod.Get))
+                {
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <div class="col-md-4" style="padding-left: 0px;">
+                                <input type="text" value="@ViewBag.KeyWord" class="form-control" name="KeyWord" />
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                                <a class="btn btn-primary" href="/Admin/LoaiDMSP/Create">Thêm mới</a>
+                            </div>
+                        </div>
+                    </div>}
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Tên loại danh mục sản phẩm</th>
+                                <th>Status</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr id="row_@item.DanhMucSanPhamPID">
+                                    <td>@item.TenLoaiDanhMucSanPham</td>
+                                    <td>
+                                        @{ if (item.status == true)
+                                            {
+                                                <span>X</span> }
+                                            else
+                                            {
+                                                <span></span> } }
+                                    </td>                                 
+                                    <td>
+                                        <a href="/Admin/LoaiDMSP/Edit/@item.DanhMucSanPhamPID">Cập nhật</a>
+                                        <a href="#">/</a>
+                                        @Ajax.ActionLink("Xoá", "Delete", new { @id = item.DanhMucSanPhamPID }, new AjaxOptions
+                                   {
+                                       Confirm = "Bạn có muốn xoá bản ghi này?",
+                                       OnComplete = "$('#row_" + @item.DanhMucSanPhamPID + "').remove()",
+                                       HttpMethod = "Delete"
+                                   })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, KeyWord = @ViewBag.KeyWord }))
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+        </div>
+    </div>
+
+</div>
+

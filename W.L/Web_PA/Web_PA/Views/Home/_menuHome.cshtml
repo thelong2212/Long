@@ -1,0 +1,333 @@
+﻿@using Web_PA.Models
+@{
+    var phanLoaiTheoHang = ViewData["phanLoaiTheoHang"] as List<PhanLoaiTheoHangSp> ?? new List<PhanLoaiTheoHangSp>();
+    var loaiDanhMucSanPham = ViewData["loaiDanhMucSanPham"] as List<LoaiDanhMucSanPham> ?? new List<LoaiDanhMucSanPham>();
+    var loaiDMSP = ViewData["loaiDMSP"] as List<DanhMucSanPham> ?? new List<DanhMucSanPham>();
+    var DanhMuc = ViewData["DanhMuc"] as List<PhanLoaiSanPham> ?? new List<PhanLoaiSanPham>();
+    var SanPhamHot = ViewData["SanPhamHot"] as SanPham;
+    var listHot = ViewData["listHot"] as List<SanPham> ?? new List<SanPham>();
+    var SanPhamNew = ViewData["SanPhamNew"] as SanPham;
+    var listSpNew = ViewData["listSpNew"] as List<SanPham> ?? new List<SanPham>();
+    var sanPham = ViewData["sanPham"] as List<SanPham> ?? new List<SanPham>();
+    if (SanPhamHot == null)
+    {
+        SanPhamHot = new SanPham();
+    }
+    if (SanPhamHot.AnhSanPham == null)
+    {
+        SanPhamHot.AnhSanPham = "~/images/product/a.jpg";
+    }
+    if (SanPhamNew == null)
+    {
+        SanPhamNew = new SanPham();
+    }
+    if (SanPhamNew.AnhSanPham == null)
+    {
+        SanPhamNew.AnhSanPham = "~/images/product/a.jpg";
+    }
+}
+
+<section>
+    <div class="container">
+        <div class="row body">
+            <div class="col-sm-9" id="b-left">
+                <div class="row">
+                    <div class="col-sm-4 content-menu">
+                        <ul class="main-menu">
+                            @foreach (var PhanLoaiDM in loaiDanhMucSanPham)
+                            {
+                                <li class="hover">
+                                    <a href="/productCategory/@PhanLoaiDM.DanhMucSanPhamPID">@PhanLoaiDM.TenLoaiDanhMucSanPham</a>
+                                    <div class="menu-detail">
+                                        @foreach (var itemC in loaiDMSP.Where(x => x.DanhMucSanPhamPID == PhanLoaiDM.DanhMucSanPhamPID))
+                                        {
+                                            <div class="box-cat">
+                                                <a class="ti-menu" href="/Category-product/@itemC.DanhMucSanPhamID"><b>@itemC.TenDanhMucSanPham</b></a>
+                                                <div class="new-sub">
+                                                    @foreach (var item in DanhMuc.Where(x => x.DanhMucSanPhamID == itemC.DanhMucSanPhamID))
+                                                    {
+                                                        <div class="lap1">
+                                                            <a href="/productCategoryClass/@item.PhanLoaiSanPhamID">@item.TenPhanLoaiSanPham</a>
+                                                            @foreach (var spdm in phanLoaiTheoHang)
+                                                            {
+                                                                var child = phanLoaiTheoHang.Where(x => x.PhanLoaiSanPhamID == item.PhanLoaiSanPhamID);
+                                                                if (child.Count() > 0)
+                                                                {
+                                                                    <div class="list-sub-hover">
+
+                                                                        @foreach (var childItem in child)
+                                                                        {
+                                                                            <a href="/productCategoryName/@childItem.PhanLoaiSanPhamID" class="cat3">@childItem.TenSanPhamTheoHang</a>
+                                                                        }
+                                                                    </div>
+                                                                }
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
+
+                                            </div>
+                                        }
+                                    </div>
+
+                                </li>
+
+                            }
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-8 slideshow">
+                        <div class="your-class">
+                            <div class="item-banner">
+                                <img src="~/asset/client/image/banner/01_Jul3fb56b3918af76d8c84c17018d1dfa8e.jpg" alt="">
+                            </div>
+                            <div class="item-banner">
+                                <img src="~/asset/client/image/banner/01_Jul8a446134b0f9e4216226104e84a68422.jpg" alt="">
+                            </div>
+                            <div class="item-banner">
+                                <img src="~/asset/client/image/banner/01_Jul9d373af3c1d8dd5b8e92c19f2b9ce13f.jpg" alt="">
+                            </div>
+                            <div class="item-banner">
+                                <img src="~/asset/client/image/banner/01_Jula4d68d1a840ca685d4b803db65a9cb25.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="banner-mid">
+                        <img src="~/asset/client/image/banner/01_Jul463236f7bca1021986589d404430fa72.jpg" alt="">
+                    </div>
+                </div>
+                <div class="tabs">
+                    <button class="tablinks active" data-electronic="hot">Sản phẩm hot</button>
+                    <button class="tablinks" data-electronic="new">Sẩn phẩm mới</button>
+                </div>
+                <div class="row container" id="productID">
+                    <div class="row product-list active" id="hot">
+                        <div class="col-sm-5 img-big">
+                            <div>
+                                <img src="@Url.Content(SanPhamHot.AnhSanPham)" alt="">
+                                <a href="/detailProduct/@SanPhamHot.SanPhamID"><h5>@SanPhamHot.TenSanPham</h5></a>
+                                <span class="d-price">@(SanPhamHot.GiaBan+"VND")</span>
+                                <span class="d-oldprice">@(SanPhamHot.GiaNiemYet+"VND")</span>
+                                <p class="d-summary">
+                                    @SanPhamHot.ThongTinSanPham
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-7 img-small">
+                            <div class="row img4-table">
+                                @foreach (var itemHot in listHot.Skip(SanPhamHot.SanPhamID))
+                                {
+                                    <div class="col" id="img-table-1">
+                                        <img src="@Url.Content(itemHot.AnhSanPham)" alt="">
+                                        <a href="/detailProduct/@itemHot.SanPhamID">@itemHot.TenSanPham</a>
+                                        <span style="font-size: 12px;">
+                                            <i id="list-price">Giá niêm miết: </i>@(itemHot.GiaNiemYet+"VND")
+                                        </span>
+                                        <span id="price">
+                                            <i>Giá bán: </i>@(itemHot.GiaBan+"VND")
+                                        </span>
+                                        <span id="pro-icon">
+                                            <span class="fas fa-check" id="tick">
+                                                Có
+                                                hàng
+                                            </span>
+                                            <a href="/detailProduct/@itemHot.SanPhamID" class="fas fa-shopping-cart" id="cart">
+                                                Giỏ hàng
+                                            </a>
+                                        </span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row product-list" id="new">
+                        <div class="col-sm-5 img-big">
+                            <div>
+                                <img src="@Url.Content(SanPhamNew.AnhSanPham)" alt="">
+                                <a href="/detailProduct/@SanPhamNew.SanPhamID"><h5>@SanPhamNew.TenSanPham</h5></a>
+                                <span class="d-price">@(SanPhamNew.GiaBan+"VND")</span>
+                                <span class="d-oldprice">@(SanPhamNew.GiaNiemYet+"VND")</span>
+                                <p class="d-summary">
+                                    @SanPhamNew.ThongTinSanPham
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 img-small">
+                            <div class="row img4-table">
+                                @foreach (var itemNew in listSpNew.Skip(SanPhamNew.SanPhamID))
+                                {
+                                    <div class="col" id="img-table-1">
+                                        <img src="@Url.Content(itemNew.AnhSanPham)" alt="">
+                                        <a href="/detailProduct/@itemNew.SanPhamID">@itemNew.TenSanPham</a>
+                                        <span style="font-size: 12px;">
+                                            <i id="list-price">Giá niêm miết: </i>@(itemNew.GiaNiemYet+"VND")
+                                        </span>
+                                        <span id="price">
+                                            <i>Giá bán: </i>@(itemNew.GiaBan+"VND")
+                                        </span>
+                                        <span id="pro-icon">
+                                            <span class="fas fa-check" id="tick">
+                                                Có
+                                                hàng
+                                            </span>
+                                            <a href="/detailProduct/@itemNew.SanPhamID" class="fas fa-shopping-cart" id="cart">
+                                                Giỏ hàng
+                                            </a>
+                                        </span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3" id="b-right">
+                <div>
+                    <div>
+                        <video controls="" autoplay="">
+                            <source src="https://www.youtube.com/watch?v=gaQ5xxqVn30" type="">
+                        </video>
+                    </div>
+                    <div>
+                        <span>
+                            <img src="~/Asset/client/image/banner/Tuyendung_350x195copy.jpg" alt="">
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <img src="~/Asset/client/image/banner/14_Sep713a1ea1778f80116bec292b7aa455a2.jpg" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div class="news">
+                    <div class="title">
+                        <span>
+                            <i class="fas fa-newspaper"></i>
+                            <a class="h-title">Tin Khuyến mãi</a>
+                        </span>
+                        <span class="full">
+                            <a href="">Xem tất cả>>></a>
+                        </span>
+                    </div>
+                    <ul class="ul">
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/TimkiemKM/120_8736_km_tra_gop_t7_2021_s1.jpg"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/TimkiemKM/120_8774_banner_bv_build_pc_t7_2021.jpg"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/TimkiemKM/120_8780_banner_bv_laptop_t7_2021.jpg"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/TimkiemKM/120_8906_f321dbadfd9f09c1508e.jpg"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/TimkiemKM/120_8942_km_mb_t7_2021.jpg"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newsKM">
+                    <div class="title">
+                        <span>
+                            <i class="fas fa-newspaper"></i>
+                            <a class="h-title">Tin Khuyến mãi</a>
+                        </span>
+                        <span class="full">
+                            <a href="">Xem tất cả>>></a>
+                        </span>
+                    </div>
+                    <ul class="ul" style="list-style:none">
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/news/120_8968_gigabyteg5kc__11__result (1).png"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/news/120_8965_logo2_result.PNG"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/news/120_8928_z2570106846138_9c1db390b947355559f8a76d5d6621d1.jpg"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <img src="~/Asset/client/image/news/120_8912_010720216.jpg"
+                                     alt="[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh">
+                                <span class="a-right">
+                                    <b class="name">[Khuyến mại] Trả góp 0% ưu đãi lớn tại Phúc Anh</b>
+                                    <span class="time">Hôm nay, 3:33 pm</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

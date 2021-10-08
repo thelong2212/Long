@@ -1,0 +1,135 @@
+﻿@using PhucAnh_done.Models;
+@using PhucAnh_done.Common;
+@{
+    var phanLoaiTheoHang = ViewData["phanLoaiTheoHang"] as List<PhanLoaiTheoHangSp> ?? new List<PhanLoaiTheoHangSp>();
+    var loaiDanhMucSanPham = ViewData["loaiDanhMucSanPham"] as List<LoaiDanhMucSanPham> ?? new List<LoaiDanhMucSanPham>();
+    var loaiDMSP = ViewData["loaiDMSP"] as List<DanhMucSanPham> ?? new List<DanhMucSanPham>();
+    var DanhMuc = ViewData["DanhMuc"] as List<PhanLoaiSanPham> ?? new List<PhanLoaiSanPham>();
+    var UserLogin = ViewData["UserLogin"] as User;
+    Layout = null;
+}
+
+<body>
+    <section>
+        <div class="row top">
+            <div class="col-md-2">
+                <ul>
+                    <li>
+                        <a href=""> Hệ Thống Showroom</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-7">
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-gifts"></i>
+                            Khuyến mãi
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-newspaper"></i>
+                            Tin tức
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-phone-alt"></i>
+                            Xây dựng cấu hình
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            In hoá đơn điện tử
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">Tra cứu bảo hành</a>
+                    </li>
+                    <li>
+                        <a href="">Mua trả góp</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div>
+                    @{if (Session[PhucAnh_done.Common.CommonSession.USER_SESSION] != null)
+                        {
+                            <div class="menu-lv1">
+                                <li class="acc">
+                                    <a href=""><i class="fa fa-user fa-fw"></i></a><samp>@UserLogin.UserName</samp>
+                                    
+                                    <ul class="menu-lv1-content">
+                                        <li>
+                                            <a href="#"><b>Tài khoản của tôi</b>></a>
+                                        </li>
+                                        <li>
+                                            <a href="/User/DangXuat"><b> Đăng xuất</b></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="menu-lv1">
+                                <li class="acc">
+                                    <a href=""><i class="fa fa-user fa-fw"></i></a><samp>Tài Khoản</samp>
+                                    <ul class="menu-lv1-content">
+                                        <li>
+                                            <a href="/login"><b>Đăng nhập</b></a>
+                                        </li>
+                                        <li>
+                                            <a href="/signup"><b> Đăng ký</b></a>
+                                        </li>
+                                        <li>
+                                            <a href="/admin/login"><b>Quản lý hệ thống</b></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container header">
+            <div class="row" id="IDheader">
+                <div id="banner">
+                    <a href="/" id="logo">
+                        <img src="~/asset/client/image/banner/tải xuống.png" alt="">
+                    </a>
+                </div>
+                <div id="search">
+                    <div class="search">
+                        <form action="">
+                            <input type="search" id="searchID" placeholder="Nhập từ khoá tìm kiếm..." />
+                            <select style="outline: none;" id="search-type">
+                                <option value="product">Sản phẩm</option>
+                                <option value="article">Bài viết</option>
+                            </select>
+                            <span id="icon"><i class="fa fa-search"></i></span>
+                        </form>
+                    </div>
+                </div>
+                <div id="phone">
+                    Gọi mua hàng:
+                    <b>1900 2146</b>
+                </div>
+                <div id="cartID">
+                    <a id="cart-header" href="/giohang">
+                        <i class="fas fa-shopping-cart"></i><span>Giỏ hàng </span><b>@ViewBag.SoLuong</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+

@@ -1,0 +1,96 @@
+﻿@using PhucAnhWeb.Models;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var phanLoaiTheoHang = ViewData["phanLoaiTheoHang"] as List<PhanLoaiTheoHangSp> ?? new List<PhanLoaiTheoHangSp>();
+    var loaiDanhMucSanPham = ViewData["loaiDanhMucSanPham"] as List<LoaiDanhMucSanPham> ?? new List<LoaiDanhMucSanPham>();
+    var loaiDMSP = ViewData["loaiDMSP"] as List<DanhMucSanPham> ?? new List<DanhMucSanPham>();
+    var DanhMuc = ViewData["DanhMuc"] as List<PhanLoaiSanPham> ?? new List<PhanLoaiSanPham>();
+
+    var SanPhamHot = ViewData["SanPhamHot"] as SanPham;
+    var listHot = ViewData["listHot"] as List<SanPham> ?? new List<SanPham>();
+    var SanPhamNew = ViewData["SanPhamNew"] as SanPham;
+    var listSpNew = ViewData["listSpNew"] as List<SanPham> ?? new List<SanPham>();
+    var sanPham = ViewData["sanPham"] as List<SanPham> ?? new List<SanPham>();
+    if (SanPhamHot == null)
+    {
+        SanPhamHot = new SanPham();
+    }
+    if (SanPhamHot.AnhSanPham == null)
+    {
+        SanPhamHot.AnhSanPham = "~/images/product/a.jpg";
+    }
+    if (SanPhamNew == null)
+    {
+        SanPhamNew = new SanPham();
+    }
+    if (SanPhamNew.AnhSanPham == null)
+    {
+        SanPhamNew.AnhSanPham = "~/images/product/a.jpg";
+    }
+
+}
+
+@Html.Partial("~/Views/Shared/_menuMain.cshtml")
+
+@Html.Partial("~/Views/Home/_menuHome.cshtml")
+<section>
+    <div class="container">
+        <div>
+            @foreach (LoaiDanhMucSanPham dm in loaiDanhMucSanPham)
+            {
+                <div class="name-product">
+                    <div id="title_product">
+                        <span class="span_title">
+                            @dm.TenLoaiDanhMucSanPham
+                            <a href="/productCategory/@dm.DanhMucSanPhamPID">Xem tất cả <i class="fas fa-angle-double-right"></i></a>
+                        </span>
+                    </div>
+                </div>
+                <div class="row img-table">
+                    @foreach (var item in sanPham.Where(x => x.DanhMucSanPhamPID == dm.DanhMucSanPhamPID).Take(8))
+                    {
+                        <div class="col-md-2 col" id="img-table-1">
+                            <img src="@Url.Content(item.AnhSanPham)" alt="">
+                            <a href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+                            <span style="font-size: 12px;">
+                                <i id="list-price">Giá niêm miết: </i>@(item.GiaNiemYet + "VND")
+                            </span>
+                            <span id="price">
+                                <i>Giá bán: </i>@(item.GiaBan)
+                            </span>
+                            <span id="pro-icon">
+                                <span class="fas fa-check" id="tick">
+                                    Có
+                                    hàng
+                                </span>
+                                <a href="/detailProduct/@item.SanPhamID" class="fas fa-shopping-cart" id="cart">
+                                    Giỏ hàng
+                                </a>
+                            </span>
+
+                        </div>
+                    }
+                </div>
+                <div class="responsive">
+                    @foreach (var item in sanPham.Where(x => x.DanhMucSanPhamPID == dm.DanhMucSanPhamPID).Take(8))
+                    {
+                        <div class="mobile_product">
+                            <div class="col-md-3 col" id="img-table-1">
+                                <img src="@Url.Content(item.AnhSanPham)" alt="">
+                                <a class="name_product_mobile" href="/detailProduct/@item.SanPhamID">@item.TenSanPham</a>
+
+                            </div>
+                            <div>
+                                <span id="price">
+                                    <i>Giá bán: </i>@(item.GiaBan)
+                                </span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
